@@ -127,4 +127,7 @@ runGame puzzle = forever $ do
 
 main :: IO ()
 main = do
-  putStrLn "hello world"
+  hSetBuffering stdout NoBuffering
+  word <- randomWord'
+  let puzzle = freshPuzzle (fmap toLower word)
+  runGame puzzle
