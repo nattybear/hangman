@@ -22,7 +22,7 @@ minWordLength :: Int
 minWordLength = 5
 
 maxWordLength :: Int
-maxWordLength = 9
+maxWordLength = 7
 
 gameWords :: IO WordList
 gameWords = do
