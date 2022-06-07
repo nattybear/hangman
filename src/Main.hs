@@ -104,6 +104,15 @@ gameOver (Puzzle wordToGuess _ guessed) =
     exitSuccess
   else return ()
 
+gameWin :: Puzzle -> IO ()
+gameWin (Puzzle _ filledInSoFar _) =
+  if all isJust filledInSoFar
+  then do
+    putStrLn "You win!"
+    exitSuccess
+  else
+    return ()
+
 main :: IO ()
 main = do
   putStrLn "hello world"
